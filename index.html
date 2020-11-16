@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Nunito:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
     <link href="./reset.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
     <title>Draw your tiles</title>
 </head>
 <body>
@@ -16,11 +18,12 @@
             <form class="picker-form">
                 <input class="picker-gridsize"/>
                 <input class="picker-cellsize"/>
+                <button type="submit">Valider</button>
             </form>
         </div>
-        <div class="grid-background">
-            <div class="grid"></div>
-            <div class="colorpicker"></div>
+        <div class="central">
+            <div id="central-grid"></div>
+            <div class="central-colorpicker">Colorpicker</div>
         </div>
     </main>
     <footer>Credits: <a href="https://github.com/livprojects">livprojects</a></footer>
