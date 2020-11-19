@@ -6,7 +6,7 @@ const app = {
         formsubmit.addEventListener('submit', app.changeGrid);
     }, 
 
-    drawGrid: (gridSize = 6, cellSize) => {
+    drawGrid: (gridSize = 6, cellSize = 20) => {
 
         // Resets HTML when loaded //
         const grid = document.getElementById('central-grid'); grid.innerHTML = '';
@@ -19,6 +19,9 @@ const app = {
             for (let cellIndex = 0; cellIndex < gridSize; cellIndex++) {
                 const cell = document.createElement('td');
                 cell.classList.add('grid-cell');
+
+                cell.style.width = cellSize+'px';
+                cell.style.height = cellSize+'px';
 
                 // Static size for now in CSS, will be dynamic later //
 
