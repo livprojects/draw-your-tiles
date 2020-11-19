@@ -15,10 +15,12 @@
             <h1>Draw your tiles</h1>
         </header>
         <div class="picker">
-            <form class="picker-form">
-                <input class="picker-gridsize"/>
-                <input class="picker-cellsize"/>
-                <button type="submit">Valider</button>
+            <form method="get" id="picker-form-id" class="picker-form">
+                <label for="gridsize">Nombre de cellules:</label>
+                <input type="number" id="gridsize" class="picker-gridsize" min="0" max="10"/>
+                <label for="cellsize">Taille d'une cellule (pixels):</label>
+                <input type="number" class="picker-cellsize" min="0" max="10"/>
+                <button type="submit" id="submitButton">Valider</button>
             </form>
         </div>
         <div class="central">

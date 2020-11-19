@@ -1,24 +1,28 @@
 const app = {
     init: () => {
         app.drawGrid();
+
+        const formsubmit = document.getElementById('submitButton');
+        formsubmit.addEventListener('submit', app.changeGrid);
     }, 
 
-    drawGrid: () => {
+    drawGrid: (gridSize = 6, cellSize) => {
 
         // Resets HTML when loaded //
         const grid = document.getElementById('central-grid'); grid.innerHTML = '';
 
         const tableContainer = document.createElement('table');
 
-        for (let rowIndex = 0; rowIndex < 8; rowIndex++) {
+        for (let rowIndex = 0; rowIndex < gridSize; rowIndex++) {
             const row = document.createElement('tr'); 
 
-            for (let cellIndex = 0; cellIndex < 8; cellIndex++) {
+            for (let cellIndex = 0; cellIndex < gridSize; cellIndex++) {
                 const cell = document.createElement('td');
                 cell.classList.add('grid-cell');
 
                 // Static size for now in CSS, will be dynamic later //
 
+                // thanks to cellSize
 
                 row.appendChild(cell);
 
@@ -31,6 +35,9 @@ const app = {
 
 
 
+    }, 
+    changeGrid: () => {
+        console.log('Coucou');
     }
 }
 
