@@ -19,14 +19,33 @@ header h1 {
     font-family: 'Fredericka the Great', cursive;
     margin: 3rem auto;
     font-size: 4rem;
-    background-color: #161616;
-    color:white;
-    padding: 2rem;
+    color:black;
+    padding: 1.5rem;
+    transform: rotate(-10deg);
+    transition: 0.5s all;
+
+}
+
+header h1:hover {
+    letter-spacing: 2px;
+    transition: 0.5s all;
+    border-bottom: 4px solid pink;
+
 }
 
 .picker {
     display: flex;
     justify-content: space-around;
+}
+
+#picker-form-id {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#picker-form-id > * {
+width: 30%;
 }
 
 .central {
