@@ -2,11 +2,24 @@ const app = {
     init: () => {
         app.drawGrid();
         app.createForm();
+        app.addButtons();
 
     },
 
+    // Making colors available for class picking // 
+    colors: [
+        'grey',
+        'blue', 
+        'gold', 
+        'green'
+    ],
+
+    selectedColor: 'grey',
+
+
+
     drawGrid: (gridSize = 6, cellSize = 20) => {
-console.log(gridSize);        // Resets HTML when loaded //
+    // Resets HTML when loaded //
         const grid = document.getElementById('central-grid');
         grid.innerHTML = '';
 
@@ -22,9 +35,7 @@ console.log(gridSize);        // Resets HTML when loaded //
                 cell.style.width = cellSize + 'px';
                 cell.style.height = cellSize + 'px';
 
-                // Static size for now in CSS, will be dynamic later //
-
-                // thanks to cellSize
+                cell.addEventListener('click', app.handleColorChange);
 
                 row.appendChild(cell);
 
@@ -68,11 +79,34 @@ console.log(gridSize);        // Resets HTML when loaded //
         form.addEventListener('submit', app.resizeGrid);
 
     },
+
+    addButtons: () => {
+        const colorpicker = document.getElementById('central-colorpicker-buttons');
+
+        app.colors.forEach((color => {
+            const button = document.createElement('div');
+            button.classList.add('pickingButton', color);   
+            button.dataset.colorName = color;
+            button.addEventListener('click', app.chooseColor);
+
+            colorpicker.appendChild(button);
+
+        }))
+
+    },
+
     resizeGrid: (event) => {
         event.preventDefault();
         console.log('coucou');
 
         app.drawGrid(app.gridSize.value, app.cellSize.value);
+    },
+    chooseColor: (event) => {
+        app.selectedColor = event.target.dataset.colorName;
+
+    }, 
+    handleColorChange: (event) => {
+        event.target.className = 'grid-cell '+app.selectedColor;
     }
 }
 
