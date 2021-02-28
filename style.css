@@ -21,7 +21,6 @@ header h1 {
     font-size: 4rem;
     color: black;
     padding: 1.5rem;
-    transform: rotate(-10deg);
     transition: 0.5s all;
 
 }
@@ -29,7 +28,9 @@ header h1 {
 header h1:hover {
     letter-spacing: 2px;
     transition: 0.5s all;
-    border-bottom: 4px solid pink;
+    color: #c4e1ff;
+    transition: 0.5s all;
+
 
 }
 
@@ -47,9 +48,13 @@ header h1:hover {
     margin: 1.5rem auto;
 }
 
-.central-colorpicker > p {
+.central-colorpicker>p {
     text-align: center;
+    border-bottom: solid 4px #c4e1ff;
+
 }
+
+
 #central-colorpicker-buttons {
     display: flex;
     margin: 1rem auto;
@@ -58,25 +63,57 @@ header h1:hover {
 
 
 .picker {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.picker > p {
+
+.picker>p {
     text-align: center;
     margin-bottom: 1rem;
+    border-bottom: solid 4px #c4e1ff;
 }
 
 #picker-form-id {
     display: flex;
     justify-content: space-between;
     width: 70%;
+    flex-direction: column;
 }
 
 #picker-form-id>* {
     width: 30%;
+    margin: 1rem auto;
+    border-radius: 10px;
+    border: solid 2px #c4e1ff;
+    padding: 0.5rem;
+
+}
+
+#picker-form-id>button {
+    margin: 1rem auto;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    background-color: lightgrey;
+    padding: 0.5rem;
+    transition: 0.5s all;
+    width: 20%;
+
+
+}
+
+#picker-form-id>button:hover {
+    margin: 1rem auto;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    background-color: #c4e1ff;
+    padding: 0.5rem;
+    transition: 0.5s all;
+
 }
 
 #central-grid {
@@ -133,4 +170,8 @@ footer>a {
 
 .grey {
     background-color: lightgrey;
+}
+
+input:focus {
+    border: 1px solid #c4e1ff;
 }
